@@ -21,6 +21,5 @@ export const getSpecificSerie = ({ tv, page }) => {
 		entertainment: 'tv',
 		page: page,
 		searchParam: tv,
-		adult: true,
 	});
 };
