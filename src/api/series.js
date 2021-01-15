@@ -1,17 +1,26 @@
 import { basicQuery } from './default';
 
-export const getPopularSeries = () => {
-	return basicQuery('tv', 'popular');
+export const getPopularSeries = ({ page }) => {
+	return basicQuery({ entertainment: 'tv', type: 'popular', page: page });
 };
 
-export const getLatestSeries = () => {
-	return basicQuery('tv', 'latest');
+export const getLatestSeries = ({ page }) => {
+	return basicQuery({ entertainment: 'tv', type: 'latest', page: page });
 };
 
-export const getNowPlayingSeries = () => {
-	return basicQuery('tv', 'now_playing');
+export const getNowPlayingSeries = ({ page }) => {
+	return basicQuery({ entertainment: 'tv', type: 'now_playing', page: page });
 };
 
-export const getUpcomingSeries = () => {
-	return basicQuery('tv', 'upcoming');
+export const getUpcomingSeries = ({ page }) => {
+	return basicQuery({ entertainment: 'tv', type: 'upcoming', page: page });
+};
+
+export const getSpecificSerie = ({ tv, page }) => {
+	return basicQuery({
+		entertainment: 'tv',
+		page: page,
+		searchParam: tv,
+		adult: true,
+	});
 };
