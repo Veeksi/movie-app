@@ -1,10 +1,17 @@
+import React, { useEffect } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
-import React from 'react';
-import { query } from './api/query';
+import { getPopularMovies } from './api/movies';
 
 const App = () => {
-	query();
+	useEffect(() => {
+		const getData = async () => {
+			const data = await getPopularMovies();
+			console.log(data);
+		};
+		//getData();
+	}, []);
+
 	return (
 		<Router>
 			<Switch>
