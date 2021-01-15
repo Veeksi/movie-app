@@ -14,7 +14,7 @@ const Main = () => {
 			});
 			setData(data.data);
 		};
-		fetchData();
+		// fetchData();
 	}, []);
 
 	console.log(data);
@@ -28,7 +28,8 @@ const Main = () => {
 		<div
 			style={{
 				display: 'flex',
-				flexDirection: 'column',
+				flexDirection: 'row',
+				flexWrap: 'wrap',
 			}}
 		>
 			{data.results.map((item, idx) => (

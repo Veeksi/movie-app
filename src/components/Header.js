@@ -3,7 +3,14 @@ import React from 'react';
 
 const Header = () => {
 	return (
-		<div>
+		<div
+			style={{
+				display: 'flex',
+				flexWrap: 'wrap',
+				justifyContent: 'space-between',
+				alignItems: 'center',
+			}}
+		>
 			<Link to='/'>Home</Link>
 			<Link to='/series'>Series</Link>
 			<Link to='/movies'>Movies</Link>
