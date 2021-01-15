@@ -14,18 +14,23 @@ const Main = () => {
 			});
 			setData(data.data);
 		};
-		// fetchData();
+		//fetchData();
 	}, []);
 
 	console.log(data);
 
 	if (!data) {
 		console.log('Loading');
-		return <div>Loading...</div>;
+		return (
+			<div className='container px-4 mx-auto md:flex md:items-center'>
+				Loading...
+			</div>
+		);
 	}
 
 	return (
 		<div
+			className='container px-4 mx-auto md:flex md:items-center'
 			style={{
 				display: 'flex',
 				flexDirection: 'row',
@@ -37,7 +42,7 @@ const Main = () => {
 					<h1>{item.original_title}</h1>
 					<p>{item.overview}</p>
 					<img
-						alt={"Can't be loaded"}
+						alt=''
 						src={`${process.env.REACT_APP_IMAGE_URI}${item.poster_path}`}
 					/>
 				</div>
