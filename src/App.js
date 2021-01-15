@@ -9,18 +9,6 @@ import { getPopularSeries } from './api/series';
 import { getTrendings } from './api/trending';
 
 const App = () => {
-	useEffect(() => {
-		const getData = async () => {
-			const data = await getTrendings({
-				page: 2,
-				media_type: 'all',
-				length: 'week',
-			});
-			console.log(data);
-		};
-		// getData();
-	}, []);
-
 	return (
 		<Router>
 			<Header />
