@@ -6,7 +6,7 @@ import { getPopularSeries } from './api/series';
 const App = () => {
 	useEffect(() => {
 		const getData = async () => {
-			const data = await getPopularSeries({page: 2})
+			const data = await getPopularSeries({ page: 2 });
 			console.log(data);
 		};
 		// getData();
