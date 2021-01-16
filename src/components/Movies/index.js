@@ -2,8 +2,8 @@ import React from 'react';
 
 const Movies = () => {
 	return (
-		<div className='container px-4 mx-auto md:flex md:items-center'>
-			This is movies page
+		<div className='flex container align-center mx-auto justify-center pt-5'>
+			Loading movies...
 		</div>
 	);
 };
