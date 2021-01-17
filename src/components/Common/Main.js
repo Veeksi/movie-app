@@ -14,7 +14,7 @@ const Main = () => {
       });
       setData(data.data);
     };
-    // fetchData();
+    fetchData();
   }, []);
 
   if (!data) {

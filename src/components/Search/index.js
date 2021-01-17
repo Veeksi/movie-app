@@ -30,15 +30,18 @@ const Search = ({ searchValue, searchType }) => {
 
   return (
     <div className="flex flex-row flex-wrap container pt-2 px-2 mx-auto justify-between">
-      {data.results.map((item, idx) => (
-        <div key={idx}>
-          <img
-            alt=""
-            src={`${process.env.REACT_APP_IMAGE_URI}${item.poster_path}`}
-          />
-          <b>{item.original_title ? item.original_title : item.name}</b>
-        </div>
-      ))}
+      {data.results.map(
+        (item, idx) =>
+          item.poster_path && (
+            <div key={idx}>
+              <img
+                alt=""
+                src={`${process.env.REACT_APP_IMAGE_URI}${item.poster_path}`}
+              />
+              <b>{item.original_title ? item.original_title : item.name}</b>
+            </div>
+          )
+      )}
     </div>
   );
 };
