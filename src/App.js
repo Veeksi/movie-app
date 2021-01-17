@@ -8,17 +8,17 @@ import React from 'react';
 import Series from './components/Series';
 
 const App = () => {
-	return (
-		<Router>
-			<Navbar />
-			<Switch>
-				<Route path='/movies' component={Movies} />
-				<Route path='/series' component={Series} />
-				<Route path='/' component={Main} />
-			</Switch>
-			<Footer />
-		</Router>
-	);
+  return (
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path="/movies" component={Movies} />
+        <Route path="/series" component={Series} />
+        <Route path="/" component={Main} />
+      </Switch>
+      <Footer />
+    </Router>
+  );
 };
 
 export default App;
