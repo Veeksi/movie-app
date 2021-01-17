@@ -17,6 +17,8 @@ export const basicQuery = async (props) => {
     length,
   } = props;
 
+  console.log(props);
+
   const params = {
     ...defaultParams,
     page: page ? `&page=${page}` : '',
@@ -31,6 +33,7 @@ export const basicQuery = async (props) => {
   let query;
 
   if (params.searchParam) {
+    console.log('Search param given');
     // Search
     query = `${params.base_uri}/search/${params.entertainment}/?${params.api_key}&${params.language}&${params.searchParam}&${params.page}`;
   } else if (params.trending) {

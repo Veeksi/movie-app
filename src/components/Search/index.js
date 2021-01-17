@@ -1,29 +1,32 @@
 import React, { useEffect, useState } from 'react';
 
-import { getTrendings } from '../../api/trending';
+import { getSpecificSerie } from '../../api/series';
 
-const Main = () => {
+const Search = ({ searchValue, searchType }) => {
   const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      console.log('Fetching');
-      const data = await getTrendings({
-        page: 1,
-        media_type: 'all',
-        length: 'week',
-      });
-      setData(data.data);
+      if (searchValue && searchType) {
+        try {
+          const result = await getSpecificSerie({
+            entertainment: searchType,
+            page: 1,
+            searchParam: searchValue,
+          });
+          setData(result.data);
+        } catch (e) {
+          console.error(e);
+        }
+      }
     };
-    // fetchData();
-  }, []);
+    fetchData();
+  }, [searchValue, searchType]);
 
   if (!data) {
-    return (
-      <div className="flex container align-center mx-auto justify-center pt-5">
-        Loading main...
-      </div>
-    );
+    return <div className="flex justify-center">Loading...</div>;
   }
+
+  console.log(data);
 
   return (
     <div className="flex flex-row flex-wrap container pt-2 px-2 mx-auto justify-between">
@@ -40,4 +43,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Search;

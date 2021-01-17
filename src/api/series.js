@@ -16,10 +16,10 @@ export const getUpcomingSeries = ({ page }) => {
   return basicQuery({ entertainment: 'tv', type: 'upcoming', page: page });
 };
 
-export const getSpecificSerie = ({ tv, page }) => {
+export const getSpecificSerie = ({ searchParam, page, entertainment }) => {
   return basicQuery({
-    entertainment: 'tv',
+    entertainment: entertainment,
     page: page,
-    searchParam: tv,
+    searchParam: searchParam,
   });
 };

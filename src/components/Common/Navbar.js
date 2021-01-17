@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
-import { Link } from 'react-router-dom';
+const Navbar = (props) => {
+  const { setSearchValue, setSearchType } = props;
 
-const Navbar = () => {
+  const history = useHistory();
   const [active, setActive] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
-  const [searchType, setSearchType] = useState('movie');
+  const [inputValue, setInputValue] = useState('');
+  const [type, setType] = useState('movie');
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchValue) {
-      console.log(searchValue);
-      console.log(searchType);
-      setSearchValue('');
-    }
+    history.push('/search');
+    setSearchType(type);
+    setSearchValue(inputValue);
+    setInputValue('');
   };
 
   const handleClick = () => {
@@ -78,8 +79,8 @@ const Navbar = () => {
             <input
               className="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-5"
               placeholder="Search"
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
             />
             <svg
               cursor="pointer"
@@ -94,7 +95,8 @@ const Navbar = () => {
             </svg>
             <select
               className="px-3 py-3 relative text-sm shadow rounded outline-none focus:shadow-outline pl-3 ml-4"
-              onChange={(e) => setSearchType(e.target.value)}
+              onChange={(e) => setType(e.target.value)}
+              defaultValue={type}
             >
               <option value="movie">Movies</option>
               <option value="tv">Series</option>
