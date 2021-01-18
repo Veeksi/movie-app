@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import ListContainer from './ListContainer';
 import { getTrendings } from '../../api/trending';
 
 const Main = () => {
@@ -26,16 +27,8 @@ const Main = () => {
   }
 
   return (
-    <div className="flex flex-row flex-wrap container pt-2 px-2 mx-auto justify-between">
-      {data.results.map((item, idx) => (
-        <div key={idx}>
-          <img
-            alt=""
-            src={`${process.env.REACT_APP_IMAGE_URI}${item.poster_path}`}
-          />
-          <b>{item.original_title ? item.original_title : item.name}</b>
-        </div>
-      ))}
+    <div className="bg-gray-300">
+      <ListContainer data={data} />
     </div>
   );
 };

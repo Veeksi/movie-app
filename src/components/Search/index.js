@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import ListContainer from '../Common/ListContainer';
 import { getSpecificSerie } from '../../api/series';
 
 const Search = ({ searchValue, searchType }) => {
@@ -29,19 +30,8 @@ const Search = ({ searchValue, searchType }) => {
   console.log(data);
 
   return (
-    <div className="flex flex-row flex-wrap container pt-2 px-2 mx-auto justify-between">
-      {data.results.map(
-        (item, idx) =>
-          item.poster_path && (
-            <div key={idx}>
-              <img
-                alt=""
-                src={`${process.env.REACT_APP_IMAGE_URI}${item.poster_path}`}
-              />
-              <b>{item.original_title ? item.original_title : item.name}</b>
-            </div>
-          )
-      )}
+    <div className="bg-gray-300">
+      <ListContainer data={data} />
     </div>
   );
 };
