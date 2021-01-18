@@ -75,7 +75,16 @@ const Navbar = (props) => {
               Series
             </p>
           </Link>
+
           <form onSubmit={handleSearch} className="flex pl-2">
+            <select
+              className="px-3 py-3 relative text-sm shadow rounded outline-none focus:shadow-outline pr-3 mr-4"
+              onChange={(e) => setType(e.target.value)}
+              defaultValue={type}
+            >
+              <option value="movie">Movies</option>
+              <option value="tv">Series</option>
+            </select>
             <input
               className="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-5"
               placeholder="Search"
@@ -85,22 +94,17 @@ const Navbar = (props) => {
             <svg
               cursor="pointer"
               onClick={handleSearch}
-              className="w-8 h-8 fill-current text-gray-500 -ml-8 z-10 self-center"
+              className="w-8 h-8 fill-current text-gray-500 -ml-6 z-10 self-center"
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="black"
+              viewBox="0 0 20 20"
+              fill="currentColor"
             >
-              <path d="M0 0h24v24H0V0z" fill="none" />
-              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+              <path
+                fillRule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clipRule="evenodd"
+              />
             </svg>
-            <select
-              className="px-3 py-3 relative text-sm shadow rounded outline-none focus:shadow-outline pl-3 ml-4"
-              onChange={(e) => setType(e.target.value)}
-              defaultValue={type}
-            >
-              <option value="movie">Movies</option>
-              <option value="tv">Series</option>
-            </select>
           </form>
         </div>
       </div>

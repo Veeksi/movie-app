@@ -7,7 +7,6 @@ const Main = () => {
   const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      console.log('Fetching');
       const data = await getTrendings({
         page: 1,
         media_type: 'all',
