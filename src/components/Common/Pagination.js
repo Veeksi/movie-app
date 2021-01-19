@@ -34,14 +34,15 @@ const Pagination = ({ page, maxPages, onNewPage }) => {
               </button>
               <button
                 onClick={() => onNewPage(page + 1)}
-                className="w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  rounded-full hover:bg-gray-400 focus:outline-none"
+                disabled={page === maxPages}
+                className="w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  rounded-full hover:bg-gray-400 focus:outline-none disabled:opacity-40"
               >
                 {page + 1}
               </button>
               <button
                 disabled={page + 2 > maxPages}
                 onClick={() => onNewPage(page + 2)}
-                className="w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  rounded-full  hover:bg-gray-400 focus:outline-none"
+                className="w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  rounded-full  hover:bg-gray-400 focus:outline-none disabled:opacity-40"
               >
                 {page + 2}
               </button>
