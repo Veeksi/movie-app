@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
 import ListContainer from './ListContainer';
+import Pagination from './Pagination';
 import { ResultHeader } from './ResultHeader';
 import { getTrendings } from '../../api/trending';
 
 const Main = () => {
   const [data, setData] = useState();
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
     const fetchData = async () => {
       const result = await getTrendings({
-        page: 1,
+        page: page,
         media_type: 'all',
         length: 'week',
       });
       setData(result.data);
     };
     fetchData();
-  }, []);
+  }, [page]);
 
   if (!data) {
     return (
@@ -28,7 +31,14 @@ const Main = () => {
 
   return (
     <div className=" bg-gray-300">
-      <ResultHeader type={'Trending'} />
+      <div className="flex container mx-auto px-4 lg:px-0 py-3 justify-between align-middle">
+        <ResultHeader type={'Trending'} />
+        <Pagination
+          page={data.page}
+          maxPages={data.total_pages}
+          onNewPage={setPage}
+        />
+      </div>
       <ListContainer data={data} />
     </div>
   );

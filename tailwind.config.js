@@ -3,7 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   variants: {
     display: ['responsive', 'group-hover', 'group-focus'],
-    extend: {},
+    extend: {
+      opacity: ['disabled'],
+    },
   },
   plugins: [],
 };
