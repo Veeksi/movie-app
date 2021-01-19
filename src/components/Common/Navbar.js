@@ -40,7 +40,7 @@ const Navbar = (props) => {
         </span>
       </p>
       <button
-        className=" inline-flex p-3 hover:bg-gray-700 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
+        className=" inline-flex p-3 hover:bg-gray-700 rounded lg:hidden text-white ml-auto hover:text-white focus:outline-none"
         onClick={handleClick}
       >
         <svg
