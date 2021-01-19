@@ -6,7 +6,7 @@ import React from 'react';
 const ListContainer = ({ data }) => {
   return (
     <div className="container mx-auto px-4 md:px-4 bg-gray-300 pb-1">
-      <div className="flex flex-wrap -mx-1 lg:-mx-4 bg-gray-200">
+      <div className="flex flex-wrap -mx-1 lg:-mx-4 bg-gray-200 ">
         {data.results.map(
           (item, idx) =>
             item.poster_path && (
