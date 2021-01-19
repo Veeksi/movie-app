@@ -1,4 +1,3 @@
-import { capitalize } from 'lodash';
 import { searchParameters } from './Constants';
 
 export const ResultHeader = ({ title, type }) => {

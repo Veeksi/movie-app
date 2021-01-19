@@ -28,8 +28,6 @@ const Movies = () => {
     return <div className="flex justify-center">Loading...</div>;
   }
 
-  console.log(id);
-
   return (
     <div className="bg-gray-300">
       <ResultHeader title={id} type={'movies'} />

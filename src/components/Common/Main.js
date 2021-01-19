@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import ListContainer from './ListContainer';
+import { ResultHeader } from './ResultHeader';
 import { getTrendings } from '../../api/trending';
 
 const Main = () => {
@@ -25,13 +26,9 @@ const Main = () => {
     );
   }
 
-  console.log('Main data', data);
-
   return (
     <div className=" bg-gray-300">
-      <div className="container mx-auto px-4 md:px-4 pb-1">
-        <p className="text-4xl font-bold">Trending</p>
-      </div>
+      <ResultHeader type={'Trending'} />
       <ListContainer data={data} />
     </div>
   );

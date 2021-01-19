@@ -67,7 +67,7 @@ const Navbar = (props) => {
       >
         <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
           <Link to="/">
-            <p className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-gray-700 hover:text-white">
+            <p className="lg:inline-flex lg:w-auto w-full lg:mr-1 mr-0 px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-gray-700 hover:text-white">
               Home
             </p>
           </Link>

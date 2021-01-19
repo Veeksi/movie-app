@@ -14,7 +14,7 @@ export const NavbarDropdown = ({ title }) => {
       <button
         onClick={() => setIsActive(!isActive)}
         type="button"
-        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-base text-white font-bold items-center justify-center hover:bg-gray-700 focus:outline-none"
+        className="lg:inline-flex lg:w-auto lg:mr-1 mr-0 w-full px-3 py-2 rounded text-base text-white font-bold items-center justify-center hover:bg-gray-700 focus:outline-none"
       >
         {title}
       </button>
