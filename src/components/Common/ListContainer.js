@@ -16,7 +16,7 @@ const ListContainer = ({ data }) => {
                 key={idx}
               >
                 <article className="flex flex-col overflow-hidden rounded-lg shadow-lg h-full">
-                  <Link to="/">
+                  <Link to={`/${item.media_type}/${item.id}`}>
                     <img
                       alt="Placeholder"
                       className="block h-auto w-full"
@@ -24,10 +24,12 @@ const ListContainer = ({ data }) => {
                     />
                   </Link>
 
+                  {console.log(item)}
+
                   <header className="flex leading-tight p-2 md:p-4 flex-grow">
                     <h1 className="text-lg">
                       <Link
-                        to="/"
+                        to={`/${item.media_type}/${item.id}`}
                         className="no-underline hover:underline text-black block"
                       >
                         {item.original_title ? item.original_title : item.name}
@@ -48,7 +50,7 @@ const ListContainer = ({ data }) => {
 
                   <footer className="flex justify-between leading-none p-2 md:p-4">
                     <Link
-                      to="/"
+                      to={`/${item.media_type}/${item.id}`}
                       className="no-underline hover:underline text-black"
                     >
                       <p className="text-sm">

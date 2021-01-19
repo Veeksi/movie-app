@@ -30,16 +30,18 @@ export const basicQuery = async (props) => {
 
   let query;
 
-  if (params.searchParam) {
-    console.log('Search param given');
-    // Search
-    query = `${params.base_uri}/search/${params.entertainment}/?${params.api_key}&${params.language}&${params.searchParam}&${params.page}`;
-  } else if (params.trending) {
-    // Trending
-    query = `${params.base_uri}/${params.trending}/${params.media_type}/${params.length}?${params.api_key}&${params.language}${params.page}`;
-  } else {
-    // Basic
-    query = `${params.base_uri}/${params.entertainment}/${params.type}?${params.api_key}&${params.language}${params.page}`;
+  switch (params) {
+    case searchParam: {
+      query = `${params.base_uri}/search/${params.entertainment}/?${params.api_key}&${params.language}&${params.searchParam}&${params.page}`;
+      break;
+    }
+    case trending: {
+      query = `${params.base_uri}/${params.trending}/${params.media_type}/${params.length}?${params.api_key}&${params.language}${params.page}`;
+      break;
+    }
+    default: {
+      query = `${params.base_uri}/${params.entertainment}/${params.type}?${params.api_key}&${params.language}${params.page}`;
+    }
   }
 
   try {

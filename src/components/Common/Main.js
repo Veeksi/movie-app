@@ -11,12 +11,16 @@ const Main = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getTrendings({
-        page: page,
-        media_type: 'all',
-        length: 'week',
-      });
-      setData(result.data);
+      try {
+        const result = await getTrendings({
+          page: page,
+          media_type: 'all',
+          length: 'week',
+        });
+        setData(result.data);
+      } catch (e) {
+        console.error(e);
+      }
     };
     fetchData();
   }, [page]);

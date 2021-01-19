@@ -7,6 +7,7 @@ import Movies from './components/Movies';
 import Navbar from './components/Common/Navbar';
 import Search from './components/Search';
 import Series from './components/Series';
+import SingleMovie from './components/Movies/SingleMovie';
 
 const App = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -19,6 +20,8 @@ const App = () => {
         <Switch>
           <Route path="/movies/:id" component={Movies} />
           <Route path="/series/:id" component={Series} />
+          <Route path="/movie/:id" component={SingleMovie} />
+          <Route path="/tv/:id" />
           <Route path="/search">
             <Search searchType={searchType} searchValue={searchValue} />
           </Route>

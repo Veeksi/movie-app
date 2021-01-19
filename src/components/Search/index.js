@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import ListContainer from '../Common/ListContainer';
 import Pagination from '../Common/Pagination';
 import { ResultHeader } from '../Common/ResultHeader';
-import { getSpecificSerie } from '../../api/series';
+import { getSpecificList } from '../../api/other';
 
 const Search = ({ searchValue, searchType }) => {
   const [data, setData] = useState();
@@ -13,7 +13,7 @@ const Search = ({ searchValue, searchType }) => {
     const fetchData = async () => {
       if (searchValue && searchType) {
         try {
-          const result = await getSpecificSerie({
+          const result = await getSpecificList({
             entertainment: searchType,
             page: page,
             searchParam: searchValue,
