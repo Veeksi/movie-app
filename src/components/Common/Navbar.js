@@ -72,7 +72,7 @@ const Navbar = (props) => {
           <NavbarDropdown title="Movies" />
           <NavbarDropdown title="Series" />
 
-          <form onSubmit={handleSearch} className="flex ">
+          <form onSubmit={handleSearch} className="flex flex-row pt-1">
             <select
               className="pl-3 relative text-sm shadow  outline-none focus:shadow-outline pr-3 rounded-l bg-gray-100"
               onChange={(e) => setType(e.target.value)}
