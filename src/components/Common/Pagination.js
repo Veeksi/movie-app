@@ -62,7 +62,7 @@ const Pagination = ({ page, maxPages, onNewPage }) => {
             {list.map((elem, idx) => (
               <button
                 key={idx}
-                onClick={() => onNewPage(elem)}
+                onClick={() => elem !== '...' && onNewPage(elem)}
                 className={`${
                   elem === page && 'font-bold'
                 } w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in rounded-full hover:bg-gray-400 focus:outline-none disabled:opacity-40`}
