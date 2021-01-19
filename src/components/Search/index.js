@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import ListContainer from '../Common/ListContainer';
+import { ResultHeader } from '../Common/ResultHeader';
 import { getSpecificSerie } from '../../api/series';
 
 const Search = ({ searchValue, searchType }) => {
@@ -30,7 +31,8 @@ const Search = ({ searchValue, searchType }) => {
   console.log(data);
 
   return (
-    <div className="flex flex-grow bg-gray-300">
+    <div className="bg-gray-300">
+      <ResultHeader type="Search results" />
       <ListContainer data={data} />
     </div>
   );

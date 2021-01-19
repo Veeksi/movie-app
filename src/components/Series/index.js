@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import ListContainer from '../Common/ListContainer';
+import { ResultHeader } from '../Common/ResultHeader';
 import { getSeries } from '../../api/series';
 import { useParams } from 'react-router-dom';
 
@@ -29,10 +30,9 @@ const Series = () => {
     return <div className="flex justify-center">Loading...</div>;
   }
 
-  console.log('Series data:', data);
-
   return (
-    <div className="flex flex-grow bg-gray-300">
+    <div className=" bg-gray-300">
+      <ResultHeader title={id} type={'series'} />
       <ListContainer data={data} />
     </div>
   );

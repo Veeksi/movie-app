@@ -28,7 +28,10 @@ const Main = () => {
   console.log('Main data', data);
 
   return (
-    <div className="bg-gray-300">
+    <div className=" bg-gray-300">
+      <div className="container mx-auto px-4 md:px-4 pb-1">
+        <p className="text-4xl font-bold">Trending</p>
+      </div>
       <ListContainer data={data} />
     </div>
   );

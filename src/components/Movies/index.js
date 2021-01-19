@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 import ListContainer from '../Common/ListContainer';
+import { ResultHeader } from '../Common/ResultHeader';
 import { getMovies } from '../../api/movies';
 import { useParams } from 'react-router-dom';
 
 const Movies = () => {
   const { id } = useParams();
   const [data, setData] = useState();
-
-  console.log('Type', id);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,10 +28,11 @@ const Movies = () => {
     return <div className="flex justify-center">Loading...</div>;
   }
 
-  console.log('Movies data:', data);
+  console.log(id);
 
   return (
-    <div className="flex flex-grow bg-gray-300">
+    <div className="bg-gray-300">
+      <ResultHeader title={id} type={'movies'} />
       <ListContainer data={data} />
     </div>
   );
