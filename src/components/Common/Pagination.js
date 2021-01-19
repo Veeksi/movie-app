@@ -1,8 +1,39 @@
 import React from 'react';
 
+const getList = ({ c, m }) => {
+  var current = c,
+    last = m,
+    delta = 2,
+    left = current - delta,
+    right = current + delta + 1,
+    range = [],
+    rangeWithDots = [],
+    l;
+
+  for (let i = 1; i <= last; i++) {
+    if (i === 1 || i === last || (i >= left && i < right)) {
+      range.push(i);
+    }
+  }
+
+  for (let i of range) {
+    if (l) {
+      if (i - l === 2) {
+        rangeWithDots.push(l + 1);
+      } else if (i - l !== 1) {
+        rangeWithDots.push('...');
+      }
+    }
+    rangeWithDots.push(i);
+    l = i;
+  }
+
+  return rangeWithDots;
+};
+
 const Pagination = ({ page, maxPages, onNewPage }) => {
-  console.log('Current page: ', page);
-  console.log('Max pages: ', maxPages);
+  const list = getList({ c: page, m: maxPages });
+
   return (
     <div className="flex flex-col items-center">
       <div className="flex text-gray-700">
@@ -27,48 +58,19 @@ const Pagination = ({ page, maxPages, onNewPage }) => {
           </svg>
         </button>
         <div className="flex h-12 font-medium rounded-full bg-gray-200">
-          {page === 1 ? (
-            <div className="flex flex-row">
-              <button className="w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  rounded-full  bg-teal-600 text-black font-bold hover:bg-gray-400 focus:outline-none">
-                {page}
-              </button>
+          <div className="flex flex-row">
+            {list.map((elem, idx) => (
               <button
-                onClick={() => onNewPage(page + 1)}
-                disabled={page === maxPages}
-                className="w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  rounded-full hover:bg-gray-400 focus:outline-none disabled:opacity-40"
+                key={idx}
+                onClick={() => onNewPage(elem)}
+                className={`${
+                  elem === page && 'font-bold'
+                } w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in rounded-full hover:bg-gray-400 focus:outline-none disabled:opacity-40`}
               >
-                {page + 1}
+                {elem}
               </button>
-              <button
-                disabled={page + 2 > maxPages}
-                onClick={() => onNewPage(page + 2)}
-                className="w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  rounded-full  hover:bg-gray-400 focus:outline-none disabled:opacity-40"
-              >
-                {page + 2}
-              </button>
-            </div>
-          ) : (
-            <div className="flex flex-row">
-              <div className="flex flex-row">
-                <button
-                  onClick={() => onNewPage(page - 1)}
-                  className="w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  rounded-full hover:bg-gray-400  focus:outline-none"
-                >
-                  {page - 1}
-                </button>
-                <button className="w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  rounded-full bg-teal-600 text-black font-bold hover:bg-gray-400 focus:outline-none">
-                  {page}
-                </button>
-                <button
-                  onClick={() => onNewPage(page + 1)}
-                  disabled={page === maxPages}
-                  className="w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  rounded-full hover:bg-gray-400 disabled:opacity-40 focus:outline-none"
-                >
-                  {page + 1}
-                </button>
-              </div>
-            </div>
-          )}
+            ))}
+          </div>
         </div>
         <button
           onClick={() => onNewPage(page + 1)}
