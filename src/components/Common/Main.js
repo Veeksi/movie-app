@@ -12,6 +12,7 @@ const Main = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log('Fetching trending');
         const result = await getTrendings({
           page: page,
           media_type: 'all',

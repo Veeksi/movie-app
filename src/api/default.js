@@ -15,6 +15,7 @@ export const basicQuery = async (props) => {
     trending,
     media_type,
     length,
+    id,
   } = props;
 
   const params = {
@@ -26,22 +27,24 @@ export const basicQuery = async (props) => {
     trending: trending ? trending : '',
     media_type: media_type ? media_type : '',
     length: length ? length : '',
+    id: id ? id : '',
   };
 
   let query;
 
-  switch (params) {
-    case searchParam: {
-      query = `${params.base_uri}/search/${params.entertainment}/?${params.api_key}&${params.language}&${params.searchParam}&${params.page}`;
-      break;
-    }
-    case trending: {
-      query = `${params.base_uri}/${params.trending}/${params.media_type}/${params.length}?${params.api_key}&${params.language}${params.page}`;
-      break;
-    }
-    default: {
-      query = `${params.base_uri}/${params.entertainment}/${params.type}?${params.api_key}&${params.language}${params.page}`;
-    }
+  // Search - Specific movie
+  // Trending - Main page trending movies & series
+  // Single search - Specific movie, tv, etc..
+  // Lists - Movie lists & Tv lists
+
+  if (params.searchParam) {
+    query = `${params.base_uri}/search/${params.entertainment}/?${params.api_key}&${params.language}&${params.searchParam}&${params.page}`;
+  } else if (params.trending) {
+    query = `${params.base_uri}/${params.trending}/${params.media_type}/${params.length}?${params.api_key}&${params.language}${params.page}`;
+  } else if (params.id) {
+    query = `${params.base_uri}/${params.entertainment}/${params.id}?${params.api_key}&${params.language} `;
+  } else {
+    query = `${params.base_uri}/${params.entertainment}/${params.type}?${params.api_key}&${params.language}${params.page}`;
   }
 
   try {

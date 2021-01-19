@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-import { getSingleMovie } from '../../api/movies';
+import { getSingleSerie } from '../../api/series';
 import { useParams } from 'react-router-dom';
 
-const SingleMovie = () => {
+const SingleSerie = () => {
   const [data, setData] = useState();
   const { id } = useParams();
-  console.log('Single movie page');
-  console.log(id);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log('Fetching single movie');
-        const result = await getSingleMovie({
+        console.log('Fetching single serie');
+        const result = await getSingleSerie({
           id: id,
         });
         setData(result.data);
@@ -37,4 +35,4 @@ const SingleMovie = () => {
   return <div></div>;
 };
 
-export default SingleMovie;
+export default SingleSerie;
