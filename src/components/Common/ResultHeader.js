@@ -1,4 +1,4 @@
-import { searchParameters } from './Constants';
+import { searchParameters } from '../../constants';
 
 export const ResultHeader = ({ title, type }) => {
   return (

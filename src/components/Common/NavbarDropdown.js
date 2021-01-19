@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 import { Link } from 'react-router-dom';
 import { lowerCase } from 'lodash';
-import { searchParameters } from './Constants';
+import { searchParameters } from '../../constants';
 import { useDetectOutsideClick } from '../../hooks/useDetectOutsideClick';
 
 export const NavbarDropdown = ({ title }) => {
