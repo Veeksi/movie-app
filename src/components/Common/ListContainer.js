@@ -12,7 +12,7 @@ const ListContainer = ({ data }) => {
             item.poster_path && (
               // Card starts here
               <div
-                className="flex flex-col my-1 px-1 w-1/2 sm:w-1/4 md:w-1/4 lg:w-1/5"
+                className="flex flex-col my-1 px-1 w-1/2 sm:w-1/4 md:w-1/5 lg:w-1/6"
                 key={idx}
               >
                 <article className="flex flex-col overflow-hidden rounded-lg shadow-lg h-full">
