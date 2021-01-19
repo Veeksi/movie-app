@@ -30,9 +30,9 @@ export const NavbarDropdown = ({ title }) => {
             Popular
           </p>
         </Link>
-        <Link to={`/${lowerCase(title)}/latest`}>
+        <Link to={`/${lowerCase(title)}/top_rated`}>
           <p className="px-4 py-2 text-gray-800 hover:bg-gray-700 hover:text-white">
-            Latest
+            Top rated
           </p>
         </Link>
         <Link to={`/${lowerCase(title)}/now_playing`}>
