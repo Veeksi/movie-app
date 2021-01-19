@@ -1,22 +1,39 @@
 import React, { useEffect, useState } from 'react';
 
-import { getPopularMovies } from '../../api/movies';
+import ListContainer from '../Common/ListContainer';
+import { getMovies } from '../../api/movies';
 import { useParams } from 'react-router-dom';
 
 const Movies = () => {
+  const { id } = useParams();
   const [data, setData] = useState();
 
-  const params = useParams();
-
-  console.log(params);
+  console.log('Type', id);
 
   useEffect(() => {
-    
-  }, []);
-  
+    const fetchData = async () => {
+      try {
+        const result = await getMovies({
+          page: 1,
+          type: id,
+        });
+        setData(result.data);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    fetchData();
+  }, [id]);
+
+  if (!data || id === 'latest') {
+    return <div className="flex justify-center">Loading...</div>;
+  }
+
+  console.log('Movies data:', data);
+
   return (
-    <div className="flex container align-center mx-auto justify-center pt-5">
-      Loading movies...
+    <div className="flex flex-grow bg-gray-300">
+      <ListContainer data={data} />
     </div>
   );
 };

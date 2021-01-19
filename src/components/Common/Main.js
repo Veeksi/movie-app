@@ -7,12 +7,12 @@ const Main = () => {
   const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getTrendings({
+      const result = await getTrendings({
         page: 1,
         media_type: 'all',
         length: 'week',
       });
-      setData(data.data);
+      setData(result.data);
     };
     fetchData();
   }, []);
@@ -24,6 +24,8 @@ const Main = () => {
       </div>
     );
   }
+
+  console.log('Main data', data);
 
   return (
     <div className="bg-gray-300">

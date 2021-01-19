@@ -17,8 +17,6 @@ export const basicQuery = async (props) => {
     length,
   } = props;
 
-  console.log(props);
-
   const params = {
     ...defaultParams,
     page: page ? `&page=${page}` : '',

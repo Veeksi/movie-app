@@ -17,8 +17,8 @@ const App = () => {
       <div className="flex flex-col h-screen bg-gray-300">
         <Navbar setSearchValue={setSearchValue} setSearchType={setSearchType} />
         <Switch>
-          <Route path="/movies" component={Movies} />
-          <Route path="/series" component={Series} />
+          <Route path="/movies/:id" component={Movies} />
+          <Route path="/series/:id" component={Series} />
           <Route path="/search">
             <Search searchType={searchType} searchValue={searchValue} />
           </Route>

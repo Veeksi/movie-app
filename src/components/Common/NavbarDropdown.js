@@ -18,6 +18,7 @@ export const NavbarDropdown = ({ title }) => {
         {title}
       </button>
       <div
+        onClick={() => setIsActive(!isActive)}
         className={
           isActive
             ? 'absolute z-10 py-2 mt-3 bg-white group-hover:block rounded-lg shadow-xl'
