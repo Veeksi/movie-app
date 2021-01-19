@@ -72,35 +72,37 @@ const Navbar = (props) => {
           <NavbarDropdown title="Movies" />
           <NavbarDropdown title="Series" />
 
-          <form onSubmit={handleSearch} className="flex pl-2">
+          <form onSubmit={handleSearch} className="flex ">
             <select
-              className="px-3 py-3 relative text-sm shadow rounded outline-none focus:shadow-outline pr-3 mr-4"
+              className="pl-3 relative text-sm shadow  outline-none focus:shadow-outline pr-3 rounded-l bg-gray-100"
               onChange={(e) => setType(e.target.value)}
               defaultValue={type}
             >
               <option value="movie">Movies</option>
               <option value="tv">Series</option>
             </select>
-            <input
-              className="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-5"
-              placeholder="Search"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-            />
-            <svg
-              cursor="pointer"
-              onClick={handleSearch}
-              className="w-8 h-8 fill-current text-gray-500 -ml-6 z-10 self-center"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                clipRule="evenodd"
+            <div className="flex flex-row px-3 py-2 pl-5 w-full items-center rounded-r placeholder-gray-400 text-gray-700 relative bg-white text-sm shadow outline-none focus:outline-none focus:shadow-outline">
+              <input
+                className="focus:outline-none pr-2"
+                placeholder="Search"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
               />
-            </svg>
+              <svg
+                cursor="pointer"
+                onClick={handleSearch}
+                className="w-5 h-5 justify-center"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
           </form>
         </div>
       </div>
