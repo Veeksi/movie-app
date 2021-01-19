@@ -5,8 +5,8 @@ import React from 'react';
 
 const ListContainer = ({ data }) => {
   return (
-    <div className="flex container mx-auto px-4 md:px-4 border bg-gray-200 pb-1">
-      <div className="flex flex-wrap -mx-1 lg:-mx-4">
+    <div className="container mx-auto px-4 md:px-4 bg-gray-300 pb-1">
+      <div className="flex flex-wrap -mx-1 lg:-mx-4 bg-gray-200">
         {data.results.map(
           (item, idx) =>
             item.poster_path && (
@@ -55,9 +55,7 @@ const ListContainer = ({ data }) => {
                         {upperCase(item.original_language)}
                       </p>
                     </Link>
-                    <p className="text-sm">
-                      {capitalize(item.media_type)}
-                    </p>
+                    <p className="text-sm">{capitalize(item.media_type)}</p>
                   </footer>
                 </article>
               </div>

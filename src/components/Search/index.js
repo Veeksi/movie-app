@@ -30,7 +30,7 @@ const Search = ({ searchValue, searchType }) => {
   console.log(data);
 
   return (
-    <div className="bg-gray-300">
+    <div className="flex flex-grow bg-gray-300">
       <ListContainer data={data} />
     </div>
   );

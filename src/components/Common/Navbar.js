@@ -13,10 +13,12 @@ const Navbar = (props) => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    history.push('/search');
-    setSearchType(type);
-    setSearchValue(inputValue);
-    setInputValue('');
+    if (inputValue) {
+      history.push('/search');
+      setSearchType(type);
+      setSearchValue(inputValue);
+      setInputValue('');
+    }
   };
 
   const handleClick = () => {
