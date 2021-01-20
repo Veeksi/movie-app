@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 const SimilarMovies = ({ data }) => {
-  console.log(data);
   return (
     <div className="flex flex-nowrap overflow-x-auto mx-2 scrollbar scrollbar-thumb-gray-500 dark:scrollbar-thumb-gray-900 scrollbar-track-white dark:scrollbar-track-white">
       {data.results.map((result, idx) => (

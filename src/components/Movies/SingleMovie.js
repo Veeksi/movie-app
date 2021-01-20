@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import Credits from './Credits';
 import SimilarMovies from './SimilarMovies';
 import { convertMinsToTime } from '../../utils/getRuntime';
 import { getSingleMovie } from '../../api/movies';
@@ -8,6 +9,7 @@ import { useParams } from 'react-router-dom';
 const SingleMovie = () => {
   const [data, setData] = useState();
   const [similarMovies, setSimilarMovies] = useState();
+  const [credits, setCredits] = useState();
   const { id } = useParams();
 
   useEffect(() => {
@@ -19,6 +21,7 @@ const SingleMovie = () => {
         });
         setData(result[0].data);
         setSimilarMovies(result[1].data);
+        setCredits(result[2].data);
       } catch (e) {
         console.error(e);
       }
@@ -26,7 +29,7 @@ const SingleMovie = () => {
     fetchData();
   }, [id]);
 
-  if (!data || !similarMovies) {
+  if (!data || !similarMovies || !credits) {
     return (
       <div className="flex container align-center mx-auto justify-center pt-5 bg-secondary text-primary flex-grow">
         Loading single movie...
@@ -104,9 +107,16 @@ const SingleMovie = () => {
             <div className="border-b-2 border-primary m-2">
               <p className="text-base pb-5">{data.overview}</p>
             </div>
-            <h1 className="text-3xl font-bold m-2">Similar movies</h1>
-            <SimilarMovies data={similarMovies} />
+            <h1 className="text-3xl font-bold ml-2">Full cast and crew</h1>
           </div>
+          <Credits data={credits} />
+
+          <div className="flex flex-col flex-wrap container mx-auto my-1 bg-primary">
+            <div className="border-t-2 border-primary ml-2 mt-5 pt-2">
+              <h1 className="text-3xl font-bold mb-2">Similar movies</h1>
+            </div>
+          </div>
+          <SimilarMovies data={similarMovies} />
         </div>
       </div>
     </div>

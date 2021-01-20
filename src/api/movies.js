@@ -12,8 +12,13 @@ export const getSingleMovie = ({ id }) => {
     id: id,
     type: 'similar',
   });
+  const getCredits = basicQuery({
+    entertainment: 'movie',
+    id: id,
+    type: 'credits',
+  });
 
-  return axios.all([getMovieData, getSimilarMovies]);
+  return axios.all([getMovieData, getSimilarMovies, getCredits]);
 };
 
 export const getSimilarMovies = ({ id }) => {
