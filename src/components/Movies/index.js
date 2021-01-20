@@ -44,7 +44,7 @@ const Movies = () => {
           onNewPage={setPage}
         />
       </div>
-      <ListContainer data={data} />
+      <ListContainer data={data} type={'movie'} />
     </div>
   );
 };

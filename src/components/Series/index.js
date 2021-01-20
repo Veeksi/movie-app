@@ -11,8 +11,6 @@ const Series = () => {
   const [data, setData] = useState();
   const [page, setPage] = useState(1);
 
-  console.log('Type', id);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -46,7 +44,7 @@ const Series = () => {
           onNewPage={setPage}
         />
       </div>
-      <ListContainer data={data} />
+      <ListContainer data={data} type={'tv'} />
     </div>
   );
 };
