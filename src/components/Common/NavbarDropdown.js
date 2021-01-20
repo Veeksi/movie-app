@@ -14,7 +14,7 @@ export const NavbarDropdown = ({ title }) => {
       <button
         onClick={() => setIsActive(!isActive)}
         type="button"
-        className="lg:inline-flex lg:w-auto lg:mr-1 mr-0 w-full px-3 py-2 rounded text-base text-black dark:text-white font-bold items-center justify-center hover:bg-gray-500 dark:hover:bg-gray-900 hover:text-white dark:hover:text-yellow-400 focus:outline-none"
+        className="lg:inline-flex lg:w-auto lg:mr-1 mr-0 w-full px-3 py-2 rounded text-base text-primary font-bold items-center justify-center hover:bg-hover hover:text-hover focus:outline-none"
       >
         {title}
       </button>
@@ -22,7 +22,7 @@ export const NavbarDropdown = ({ title }) => {
         onClick={() => setIsActive(!isActive)}
         className={
           isActive
-            ? 'absolute z-10 py-2 mt-3 bg-secondary group-hover:block rounded-lg shadow-xl-white'
+            ? 'absolute z-10 py-2 mt-3 bg-card group-hover:block rounded-lg shadow-xl-white'
             : 'hidden'
         }
       >

@@ -21,20 +21,15 @@ const SingleMovie = () => {
         console.error(e);
       }
     };
-    fetchData();
+    // fetchData();
   }, [id]);
 
-  if (!data) {
-    return (
-      <div className="flex container align-center mx-auto justify-center pt-5">
-        Loading main...
-      </div>
-    );
-  }
+  return (
+    <div className="flex container align-center mx-auto justify-center pt-5 bg-secondary text-primary flex-grow">
+      Loading single movie...
+    </div>
+  );
 
-  console.log(data);
-
-  return <div></div>;
 };
 
 export default SingleMovie;

@@ -13,6 +13,7 @@ module.exports = {
         primary: 'var(--color-bg-primary)',
         secondary: 'var(--color-bg-secondary)',
         container: 'var(--color-bg-container)',
+        card: 'var(--color-bg-card)',
         hover: 'var(--color-bg-hover)',
       },
       textColor: {

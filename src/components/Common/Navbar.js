@@ -93,9 +93,9 @@ const Navbar = (props) => {
               <option value="movie">Movies</option>
               <option value="tv">Series</option>
             </select>
-            <div className="flex flex-row px-3 py-2 pl-5 items-center rounded-r placeholder-gray-400 text-primary relative bg-secondary shadow outline-none focus:outline-none focus:shadow-outline">
+            <div className="flex flex-row px-3 py-2 pl-5 items-center rounded-r placeholder-gray-400 text-primary relative bg-card shadow outline-none focus:outline-none focus:shadow-outline">
               <input
-                className="focus:outline-none pr-2 bg-secondary"
+                className="focus:outline-none pr-2 bg-card"
                 placeholder="Search"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}

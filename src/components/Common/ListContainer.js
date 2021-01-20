@@ -5,17 +5,17 @@ import React from 'react';
 
 const ListContainer = ({ data }) => {
   return (
-    <div className="container mx-auto px-4 md:px-4 bg-primary pb-1">
-      <div className="flex flex-wrap -mx-1 lg:-mx-4">
+    <div className="container mx-auto my-2 p-2 md:px-2 lg:p-2 bg-primary pb-1">
+      <div className="flex flex-wrap">
         {data.results.map(
           (item, idx) =>
             item.poster_path && (
               // Card starts here
               <div
-                className="flex flex-col my-1 px-1 w-1/2 sm:w-1/4 md:w-1/5 lg:w-1/6 text-primary bg-primary hover:bg-hover hover:text-hover"
+                className="flex flex-col w-1/2 sm:w-1/4 md:w-1/5 lg:w-1/6 text-primary bg-card hover:bg-hover hover:text-hover"
                 key={idx}
               >
-                <article className="flex flex-col overflow-hidden rounded-lg shadow-lg h-full">
+                <article className="flex flex-col flex-grow p-2 overflow-hidden rounded shadow-lg h-full">
                   <Link to={`/${item.media_type}/${item.id}`}>
                     <img
                       alt="Placeholder"
@@ -24,7 +24,7 @@ const ListContainer = ({ data }) => {
                     />
                   </Link>
 
-                  <header className="flex leading-tight p-2 md:p-4 flex-grow">
+                  <header className="flex flex-grow leading-tight p-2 md:p-4">
                     <h1 className="text-lg">
                       <Link
                         to={`/${item.media_type}/${item.id}`}
@@ -41,9 +41,7 @@ const ListContainer = ({ data }) => {
                         ? item.release_date
                         : item.first_air_date}
                     </p>
-                    <p className="text-sm">
-                      {`${item.vote_average}☆`}
-                    </p>
+                    <p className="text-sm">{`${item.vote_average}☆`}</p>
                   </main>
 
                   <footer className="flex justify-between leading-none p-2 md:p-4">
