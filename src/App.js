@@ -9,6 +9,7 @@ import Search from './components/Search';
 import Series from './components/Series';
 import SingleMovie from './components/Movies/SingleMovie';
 import SingleSerie from './components/Search/SingleSerie';
+import { ThemeProvider } from './utils/themeContext';
 
 const App = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -16,20 +17,25 @@ const App = () => {
 
   return (
     <Router>
-      <div className="flex flex-col h-screen bg-gray-300">
-        <Navbar setSearchValue={setSearchValue} setSearchType={setSearchType} />
-        <Switch>
-          <Route path="/movies/:id" component={Movies} />
-          <Route path="/series/:id" component={Series} />
-          <Route path="/movie/:id" component={SingleMovie} />
-          <Route path="/tv/:id" component={SingleSerie} />
-          <Route path="/search">
-            <Search searchType={searchType} searchValue={searchValue} />
-          </Route>
-          <Route path="/" component={Main} />
-        </Switch>
-        <Footer />
-      </div>
+      <ThemeProvider>
+        <div className="flex flex-col h-screen bg-gray-300">
+          <Navbar
+            setSearchValue={setSearchValue}
+            setSearchType={setSearchType}
+          />
+          <Switch>
+            <Route path="/movies/:id" component={Movies} />
+            <Route path="/series/:id" component={Series} />
+            <Route path="/movie/:id" component={SingleMovie} />
+            <Route path="/tv/:id" component={SingleSerie} />
+            <Route path="/search">
+              <Search searchType={searchType} searchValue={searchValue} />
+            </Route>
+            <Route path="/" component={Main} />
+          </Switch>
+          <Footer />
+        </div>
+      </ThemeProvider>
     </Router>
   );
 };

@@ -2,6 +2,7 @@ import { Link, useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import { NavbarDropdown } from './NavbarDropdown';
+import { ThemeContext } from '../../utils/themeContext';
 
 const Navbar = (props) => {
   const { setSearchValue, setSearchType } = props;
@@ -10,6 +11,12 @@ const Navbar = (props) => {
   const [active, setActive] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [type, setType] = useState('movie');
+
+  const { theme, setTheme } = React.useContext(ThemeContext);
+
+  const isDark = () => {
+    return theme === 'dark';
+  };
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -111,7 +118,10 @@ const Navbar = (props) => {
           </form>
 
           <div className="pt-1 lg:pt-0 lg:pl-4 lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
-            <button className="lg:inline-flex lg:w-auto lg:mr-1 mr-0 px-2 py-2 rounded text-primary font-bold hover:text-hover fill-current hover:bg-hover focus:outline-none">
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="lg:inline-flex lg:w-auto lg:mr-1 mr-0 px-2 py-2 rounded text-primary font-bold hover:text-hover fill-current hover:bg-hover focus:outline-none"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
