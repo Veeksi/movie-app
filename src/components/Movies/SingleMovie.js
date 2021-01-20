@@ -37,6 +37,8 @@ const SingleMovie = () => {
     );
   }
 
+  console.log(similarMovies);
+
   return (
     <div className="flex flex-col flex-grow bg-secondary text-primary">
       <div className="flex container mx-auto px-2 lg:px-0">
@@ -103,20 +105,27 @@ const SingleMovie = () => {
             </div>
           </div>
 
-          <div className="flex flex-col flex-wrap container mx-auto my-1 bg-primary">
-            <div className="border-b-2 border-primary m-2">
-              <p className="text-base pb-5">{data.overview}</p>
-            </div>
-            <h1 className="text-3xl font-bold ml-2">Full cast and crew</h1>
+          <div className="flex flex-col container">
+            <p className="text-base pl-2">{data.overview}</p>
           </div>
-          <Credits data={credits} />
 
-          <div className="flex flex-col flex-wrap container mx-auto my-1 bg-primary">
-            <div className="border-t-2 border-primary ml-2 mt-5 pt-2">
-              <h1 className="text-3xl font-bold mb-2">Similar movies</h1>
-            </div>
-          </div>
-          <SimilarMovies data={similarMovies} />
+          {credits.cast.length > 0 && (
+            <>
+              <div className="border-t-2 border-primary mx-2 mt-5 pt-2 w-full">
+                <h1 className="text-3xl font-bold mb-2">Full cast and crew</h1>
+              </div>
+              <Credits data={credits} />
+            </>
+          )}
+
+          {similarMovies.results.length > 0 && (
+            <>
+              <div className="border-t-2 border-primary mx-2 mt-5 pt-2 w-full">
+                <h1 className="text-3xl font-bold mb-2">Similar movies</h1>
+              </div>
+              <SimilarMovies data={similarMovies} />
+            </>
+          )}
         </div>
       </div>
     </div>

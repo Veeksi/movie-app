@@ -13,7 +13,10 @@ const Credits = ({ data }) => {
                 className="block rounded hover:border-hover border-4"
                 src={`${process.env.REACT_APP_IMAGE_URI}${result.profile_path}`}
               />
-              <p>{result.original_name}</p>
+              <div className="flex flex-col justify-center items-center">
+                <p>{result.original_name}</p>
+                <p className="text-italic italic">{result.character}</p>
+              </div>
             </div>
           )
       )}
