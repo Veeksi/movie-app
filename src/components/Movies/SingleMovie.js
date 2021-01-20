@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { getSimilarMovies, getSingleMovie } from '../../api/movies';
 
 import { convertMinsToTime } from '../../utils/getRuntime';
-import { getSingleMovie } from '../../api/movies';
 import { useParams } from 'react-router-dom';
 
 const SingleMovie = () => {
   const [data, setData] = useState();
+  const [similarMovies, setSimilarMovies] = useState();
   const { id } = useParams();
-  console.log('Single movie page');
-  console.log(id);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,7 +16,8 @@ const SingleMovie = () => {
         const result = await getSingleMovie({
           id: id,
         });
-        setData(result.data);
+        setData(result[0].data);
+        setSimilarMovies(result[1].data);
       } catch (e) {
         console.error(e);
       }
@@ -25,14 +25,14 @@ const SingleMovie = () => {
     fetchData();
   }, [id]);
 
-  if (!data) {
+  if (!data || !similarMovies) {
     return (
       <div className="flex container align-center mx-auto justify-center pt-5 bg-secondary text-primary flex-grow">
         Loading single movie...
       </div>
     );
   }
-  console.log(data);
+  console.log(similarMovies);
   return (
     <div className="flex flex-col flex-grow bg-secondary text-primary">
       <div className="flex container mx-auto px-2 lg:px-0">

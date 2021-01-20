@@ -34,7 +34,7 @@ export const basicQuery = async (props) => {
 
   // Search - Specific movie
   // Trending - Main page trending movies & series
-  // Single search - Specific movie, tv, etc..
+  // Single search - Specific movie, tv, etc or similar movies / series
   // Lists - Movie lists & Tv lists
 
   if (params.searchParam) {
@@ -42,7 +42,11 @@ export const basicQuery = async (props) => {
   } else if (params.trending) {
     query = `${params.base_uri}/${params.trending}/${params.media_type}/${params.length}?${params.api_key}&${params.language}${params.page}`;
   } else if (params.id) {
-    query = `${params.base_uri}/${params.entertainment}/${params.id}?${params.api_key}&${params.language} `;
+    if (params.type) {
+      query = `${params.base_uri}/${params.entertainment}/${params.id}/${params.type}?${params.api_key}&${params.language}`;
+    } else {
+      query = `${params.base_uri}/${params.entertainment}/${params.id}?${params.api_key}&${params.language} `;
+    }
   } else {
     query = `${params.base_uri}/${params.entertainment}/${params.type}?${params.api_key}&${params.language}${params.page}`;
   }
