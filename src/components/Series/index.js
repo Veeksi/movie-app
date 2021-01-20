@@ -33,7 +33,7 @@ const Series = () => {
   }
 
   return (
-    <div className=" bg-gray-300">
+    <div className="flex flex-col bg-primary flex-grow">
       <div className="flex container mx-auto px-4 lg:px-0 py-3 justify-between align-middle">
         <ResultHeader title={id} type={'series'} />
         <Pagination

@@ -35,7 +35,7 @@ const Main = () => {
   }
 
   return (
-    <div className=" bg-gray-300">
+    <div className="flex flex-col bg-secondary flex-grow">
       <div className="flex container mx-auto px-4 lg:px-0 py-3 justify-between align-middle">
         <ResultHeader type={'Trending'} />
         <Pagination

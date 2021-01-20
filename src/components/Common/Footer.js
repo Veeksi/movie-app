@@ -3,9 +3,9 @@ import TMDBLogo from '../../assets/tmdb-primary-long.svg';
 
 const Footer = () => {
   return (
-    <footer className="footer bg-gray-300 relative pt-1 border-blue-700">
+    <footer className="flex footer bg-secondary relative pt-1">
       <div className="container mx-auto">
-        <div className="border-t-2 border-gray-300 flex flex-col items-center">
+        <div className="flex flex-col items-center">
           <div className="flex w-auto h-auto justify-center py-6 px-6">
             <a href="https://www.themoviedb.org/">
               <img

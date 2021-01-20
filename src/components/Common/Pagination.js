@@ -36,11 +36,11 @@ const Pagination = ({ page, maxPages, onNewPage }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex text-gray-700">
+      <div className="flex text-primary">
         <button
           onClick={() => onNewPage(page - 1)}
           disabled={page === 1}
-          className="h-12 w-12 mr-1 flex justify-center items-center rounded-full bg-gray-200 cursor-pointer focus:outline-none disabled:opacity-40 hover:bg-gray-400"
+          className="h-12 w-12 mr-1 flex justify-center items-center rounded-full bg-primary cursor-pointer focus:outline-none disabled:opacity-40 hover:bg-hover hover:text-hover"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const Pagination = ({ page, maxPages, onNewPage }) => {
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
-        <div className="flex h-12 font-medium rounded-full bg-gray-200">
+        <div className="flex h-12 font-medium rounded-full bg-primary">
           <div className="flex flex-row">
             {list.map((elem, idx) => (
               <button
@@ -65,7 +65,7 @@ const Pagination = ({ page, maxPages, onNewPage }) => {
                 onClick={() => elem !== '...' && onNewPage(elem)}
                 className={`${
                   elem === page && 'font-bold'
-                } w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in rounded-full hover:bg-gray-400 focus:outline-none disabled:opacity-40`}
+                } w-12 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in rounded-full hover:bg-hover hover:text-hover focus:outline-none disabled:opacity-40`}
               >
                 {elem}
               </button>
@@ -75,7 +75,7 @@ const Pagination = ({ page, maxPages, onNewPage }) => {
         <button
           onClick={() => onNewPage(page + 1)}
           disabled={page === maxPages}
-          className="h-12 w-12 ml-1 flex justify-center items-center rounded-full bg-gray-200 cursor-pointer focus:outline-none disabled:opacity-40 hover:bg-gray-400"
+          className="h-12 w-12 ml-1 flex justify-center items-center rounded-full bg-primary cursor-pointer focus:outline-none disabled:opacity-40 hover:bg-hover hover:text-hover"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -22,7 +22,7 @@ export const NavbarDropdown = ({ title }) => {
         onClick={() => setIsActive(!isActive)}
         className={
           isActive
-            ? 'absolute z-10 py-2 mt-3 bg-white group-hover:block rounded-lg shadow-xl'
+            ? 'absolute z-10 py-2 mt-3 bg-secondary group-hover:block rounded-lg shadow-xl-white'
             : 'hidden'
         }
       >
@@ -35,7 +35,7 @@ export const NavbarDropdown = ({ title }) => {
                   searchParameters.movies[item].type
                 }`}
               >
-                <p className="px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white">
+                <p className="px-4 py-2 text-primary hover:bg-hover hover:text-hover">
                   {searchParameters.movies[item].label}
                 </p>
               </Link>
@@ -48,7 +48,7 @@ export const NavbarDropdown = ({ title }) => {
                 key={idx}
                 to={`/${lowerCase(title)}/${searchParameters.tv[item].type}`}
               >
-                <p className="px-4 py-2 text-gray-800 hover:bg-gray-700 hover:text-white">
+                <p className="px-4 py-2 text-primary hover:bg-hover hover:text-hover">
                   {searchParameters.tv[item].label}
                 </p>
               </Link>
