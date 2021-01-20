@@ -4,8 +4,10 @@ import ListContainer from '../Common/ListContainer';
 import Pagination from '../Common/Pagination';
 import { ResultHeader } from '../Common/ResultHeader';
 import { getSpecificList } from '../../api/other';
+import { useHistory } from 'react-router-dom';
 
 const Search = ({ searchValue, searchType }) => {
+  const history = useHistory();
   const [data, setData] = useState();
   const [page, setPage] = useState(1);
 
@@ -22,10 +24,12 @@ const Search = ({ searchValue, searchType }) => {
         } catch (e) {
           console.error(e);
         }
+      } else {
+        history.push('/');
       }
     };
     fetchData();
-  }, [searchValue, searchType, page]);
+  }, [searchValue, searchType, page, history]);
 
   if (!data) {
     return (
@@ -45,7 +49,7 @@ const Search = ({ searchValue, searchType }) => {
           onNewPage={setPage}
         />
       </div>
-      <ListContainer data={data} />
+      <ListContainer data={data} type={searchType} />
     </div>
   );
 };

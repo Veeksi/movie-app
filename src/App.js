@@ -8,7 +8,7 @@ import Navbar from './components/Common/Navbar';
 import Search from './components/Search';
 import Series from './components/Series';
 import SingleMovie from './components/Movies/SingleMovie';
-import SingleSerie from './components/Search/SingleSerie';
+import SingleSerie from './components/Series/SingleSerie';
 import { ThemeProvider } from './utils/themeContext';
 
 const App = () => {
