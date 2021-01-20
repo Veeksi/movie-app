@@ -34,7 +34,7 @@ const SingleMovie = () => {
   }
   console.log(data);
   return (
-    <div className="flex flex-col flex-grow text-primary bg-secondary">
+    <div className="flex flex-col flex-grow bg-secondary text-primary">
       <div className="flex container mx-auto px-2 lg:px-0">
         <div className="flex flex-row flex-wrap container mx-auto my-2 p-2 md:px-2 lg:p-2 bg-primary pb-1">
           <div className="flex flex-col">
@@ -43,7 +43,7 @@ const SingleMovie = () => {
               className="block"
               src={`${process.env.REACT_APP_IMAGE_URI}${data.poster_path}`}
             />
-            <p className="italic">{data.tagline}</p>
+            <p className="italic text-italic">{data.tagline}</p>
           </div>
 
           <div className="flex flex-col sm:px-2 md:px-2 lg:px-2">

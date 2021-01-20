@@ -10,16 +10,18 @@
   --color-bg-hover: #6b7280;
   --color-text-primary: #000000;
   --color-text-hover: #ffffff;
+  --color-text-italic: #000000a4;
 }
 
 .dark {
   --color-bg-primary: #000000;
   --color-bg-secondary: #0c0c14;
   --color-bg-container: #e5e7eb;
-  --color-bg-card:   #0b0d18;
+  --color-bg-card: #0b0d18;
   --color-bg-hover: #111827;
   --color-text-primary: #ffffff;
   --color-text-hover: #fbbf24;
+  --color-text-italic: #ffffffa4;
 }
 
 @tailwind base;

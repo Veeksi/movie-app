@@ -19,6 +19,7 @@ module.exports = {
       textColor: {
         primary: 'var(--color-text-primary)',
         hover: 'var(--color-text-hover)',
+        italic: 'var(--color-text-italic)',
       },
     },
   },
