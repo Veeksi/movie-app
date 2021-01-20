@@ -5,7 +5,7 @@ import React from 'react';
 
 const ListContainer = ({ data }) => {
   return (
-    <div className="container mx-auto my-2 p-2 md:px-2 lg:p-2 bg-primary pb-1">
+    <div className="container mx-auto my-2 p-2 md:px-2 lg:p-2 bg-primary">
       <div className="flex flex-wrap">
         {data.results.map(
           (item, idx) =>
