@@ -26,6 +26,9 @@ module.exports = {
         primary: 'var(--color-border-primary)',
         hover: 'var(--color-border-hover)',
       },
+      boxShadow: {
+        white: '0 2px 8px 0 #ffffff',
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],

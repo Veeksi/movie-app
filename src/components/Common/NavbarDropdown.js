@@ -23,7 +23,7 @@ export const NavbarDropdown = ({ title }) => {
         onClick={() => setIsActive(!isActive)}
         className={
           isActive
-            ? 'absolute z-10 py-2 mt-3 bg-card group-hover:block rounded-lg shadow-xl-white'
+            ? 'absolute z-10 py-2 mt-3 bg-card group-hover:block rounded-lg shadow-white'
             : 'hidden'
         }
       >
