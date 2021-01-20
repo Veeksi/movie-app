@@ -28,12 +28,16 @@ const Series = () => {
     fetchData();
   }, [id, page]);
 
-  if (!data || id === 'latest') {
-    return <div className="flex justify-center">Loading...</div>;
+  if (!data) {
+    return (
+      <div className="flex container align-center mx-auto justify-center pt-5 bg-secondary text-primary flex-grow">
+        Loading main...
+      </div>
+    );
   }
 
   return (
-    <div className="flex flex-col bg-primary flex-grow">
+    <div className="flex flex-col bg-secondary flex-grow">
       <div className="flex container mx-auto px-4 lg:px-0 py-3 justify-between align-middle">
         <ResultHeader title={id} type={'series'} />
         <Pagination

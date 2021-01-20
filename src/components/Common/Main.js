@@ -28,7 +28,7 @@ const Main = () => {
 
   if (!data) {
     return (
-      <div className="flex container align-center mx-auto justify-center pt-5">
+      <div className="flex container align-center mx-auto justify-center pt-5 bg-secondary text-primary flex-grow">
         Loading main...
       </div>
     );

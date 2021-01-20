@@ -28,13 +28,15 @@ const Search = ({ searchValue, searchType }) => {
   }, [searchValue, searchType, page]);
 
   if (!data) {
-    return <div className="flex justify-center">Loading...</div>;
+    return (
+      <div className="flex container align-center mx-auto justify-center pt-5 bg-secondary text-primary flex-grow">
+        Loading main...
+      </div>
+    );
   }
 
-  console.log(data);
-
   return (
-    <div className="flex flex-col bg-primary flex-grow">
+    <div className="flex flex-col bg-secondary flex-grow">
       <div className="flex container mx-auto px-4 lg:px-0 py-3 justify-between align-middle">
         <ResultHeader type="Search results" />
         <Pagination

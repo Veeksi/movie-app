@@ -18,7 +18,7 @@ const App = () => {
   return (
     <Router>
       <ThemeProvider>
-        <div className="flex flex-col h-screen bg-gray-300">
+        <div className="flex flex-col h-screen bg-secondary">
           <Navbar
             setSearchValue={setSearchValue}
             setSearchType={setSearchType}
