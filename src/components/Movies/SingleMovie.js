@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getSimilarMovies, getSingleMovie } from '../../api/movies';
 
+import SimilarMovies from './SimilarMovies';
 import { convertMinsToTime } from '../../utils/getRuntime';
 import { useParams } from 'react-router-dom';
 
@@ -32,7 +33,7 @@ const SingleMovie = () => {
       </div>
     );
   }
-  console.log(similarMovies);
+
   return (
     <div className="flex flex-col flex-grow bg-secondary text-primary">
       <div className="flex container mx-auto px-2 lg:px-0">
@@ -104,6 +105,7 @@ const SingleMovie = () => {
               <p className="text-base pb-5">{data.overview}</p>
             </div>
             <h1 className="text-3xl font-bold m-2">Similar movies</h1>
+            <SimilarMovies data={similarMovies} />
           </div>
         </div>
       </div>
