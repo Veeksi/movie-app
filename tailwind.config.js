@@ -2,6 +2,7 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: 'class', // or 'media' or 'class'
   variants: {
+    scrollbar: ['dark'],
     display: ['responsive', 'group-hover', 'group-focus'],
     extend: {
       opacity: ['disabled'],
@@ -27,5 +28,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 };
