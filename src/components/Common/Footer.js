@@ -3,7 +3,7 @@ import TMDBLogo from '../../assets/tmdb-primary-long.svg';
 
 const Footer = () => {
   return (
-    <footer className="flex footer bg-secondary relative pt-1">
+    <footer className="flex footer bg-primary relative pt-1">
       <div className="container mx-auto">
         <div className="flex flex-col items-center">
           <div className="flex w-auto h-auto justify-center py-6 px-6">
