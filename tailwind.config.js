@@ -7,5 +7,19 @@ module.exports = {
       opacity: ['disabled'],
     },
   },
+  theme: {
+    extend: {
+      backgroundColor: {
+        primary: 'var(--color-bg-primary)',
+        secondary: 'var(--color-bg-secondary)',
+        container: 'var(--color-bg-container)',
+        hover: 'var(--color-bg-hover)',
+      },
+      textColor: {
+        primary: 'var(--color-text-primary)',
+        hover: 'var(--color-text-hover)',
+      },
+    },
+  },
   plugins: [],
 };

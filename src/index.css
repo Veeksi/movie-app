@@ -1,3 +1,25 @@
+:root {
+  @apply light;
+}
+
+.light {
+  --color-bg-primary: #9ca3af;
+  --color-bg-secondary: #d1d5db;
+  --color-bg-container: #e5e7eb;
+  --color-bg-hover: #6b7280;
+  --color-text-primary: #000000;
+  --color-text-hover: #ffffff;
+}
+
+.dark {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #d1d5db;
+  --color-bg-container: #e5e7eb;
+  --color-bg-hover: #111827;
+  --color-text-primary: #ffffff;
+  --color-text-hover: #fbbf24;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

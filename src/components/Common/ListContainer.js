@@ -24,8 +24,6 @@ const ListContainer = ({ data }) => {
                     />
                   </Link>
 
-                  {console.log(item)}
-
                   <header className="flex leading-tight p-2 md:p-4 flex-grow">
                     <h1 className="text-lg">
                       <Link

@@ -26,23 +26,23 @@ const Navbar = (props) => {
   };
 
   return (
-    <nav className="flex items-center flex-wrap bg-black p-3">
+    <nav className="flex items-center flex-wrap bg-primary dark:bg-black p-3">
       <Link to="/">
         <p className="inline-flex items-center p-2 mr-4 ">
           <svg
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
-            className="fill-current text-white h-8 w-8 mr-2"
+            className="fill-current text-black dark:text-white h-8 w-8 mr-2"
           >
             <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
           </svg>
-          <span className="text-xl text-white font-bold uppercase tracking-wide">
+          <span className="text-xl text-black dark:text-white font-bold uppercase tracking-wide">
             THE MOVIE APP
           </span>
         </p>
       </Link>
       <button
-        className=" inline-flex p-3 hover:bg-gray-700 rounded lg:hidden text-white ml-auto hover:text-white focus:outline-none"
+        className=" inline-flex p-3 hover:bg-gray-500 rounded lg:hidden text-gray-900 dark:text-white ml-auto hover:text-white focus:outline-none"
         onClick={handleClick}
       >
         <svg
@@ -65,9 +65,9 @@ const Navbar = (props) => {
           active ? '' : 'hidden'
         }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
       >
-        <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+        <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:items-center items-start  flex flex-col lg:h-auto">
           <Link to="/">
-            <p className="lg:inline-flex lg:w-auto w-full lg:mr-1 mr-0 px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-gray-700 hover:text-white">
+            <p className="lg:inline-flex lg:w-auto lg:mr-1 mr-0 px-3 py-2 rounded text-black dark:text-white font-bold hover:bg-gray-500 dark:hover:bg-indigo-900 hover:text-white dark:hover:text-black">
               Home
             </p>
           </Link>
@@ -86,7 +86,7 @@ const Navbar = (props) => {
               <option value="movie">Movies</option>
               <option value="tv">Series</option>
             </select>
-            <div className="flex flex-row px-3 py-2 pl-5 w-full items-center rounded-r placeholder-gray-400 text-gray-700 relative bg-white shadow outline-none focus:outline-none focus:shadow-outline">
+            <div className="flex flex-row px-3 py-2 pl-5 items-center rounded-r placeholder-gray-400 text-gray-700 relative bg-white shadow outline-none focus:outline-none focus:shadow-outline">
               <input
                 className="focus:outline-none pr-2"
                 placeholder="Search"
@@ -109,6 +109,18 @@ const Navbar = (props) => {
               </svg>
             </div>
           </form>
+
+          <div className="pt-1 lg:pt-0 lg:pl-4 lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+            <button className="lg:inline-flex lg:w-auto lg:mr-1 mr-0 px-2 py-2 rounded text-black dark:text-white font-bold hover:bg-gray-500 fill-current dark:hover:bg-yellow-300 hover:text-white dark:hover:text-yellow-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                className="w-6 h-6"
+              >
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </nav>

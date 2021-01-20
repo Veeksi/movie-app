@@ -14,7 +14,7 @@ export const NavbarDropdown = ({ title }) => {
       <button
         onClick={() => setIsActive(!isActive)}
         type="button"
-        className="lg:inline-flex lg:w-auto lg:mr-1 mr-0 w-full px-3 py-2 rounded text-base text-white font-bold items-center justify-center hover:bg-gray-700 focus:outline-none"
+        className="lg:inline-flex lg:w-auto lg:mr-1 mr-0 w-full px-3 py-2 rounded text-base text-black dark:text-white font-bold items-center justify-center hover:bg-gray-500 dark:hover:bg-gray-900 hover:text-white dark:hover:text-yellow-400 focus:outline-none"
       >
         {title}
       </button>
@@ -35,7 +35,7 @@ export const NavbarDropdown = ({ title }) => {
                   searchParameters.movies[item].type
                 }`}
               >
-                <p className="px-4 py-2 text-gray-800 hover:bg-gray-700 hover:text-white">
+                <p className="px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white">
                   {searchParameters.movies[item].label}
                 </p>
               </Link>
