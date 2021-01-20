@@ -14,10 +14,6 @@ const Navbar = (props) => {
 
   const { theme, setTheme } = React.useContext(ThemeContext);
 
-  const isDark = () => {
-    return theme === 'dark';
-  };
-
   const handleSearch = (e) => {
     e.preventDefault();
     if (inputValue) {

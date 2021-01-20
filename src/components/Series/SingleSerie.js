@@ -22,6 +22,8 @@ const SingleSerie = () => {
     fetchData();
   }, [id]);
 
+  console.log(data);
+
   return (
     <div className="flex container align-center mx-auto justify-center pt-5 bg-secondary text-primary flex-grow">
       Loading single serie...

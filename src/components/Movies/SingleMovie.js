@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { getSimilarMovies, getSingleMovie } from '../../api/movies';
 
 import SimilarMovies from './SimilarMovies';
 import { convertMinsToTime } from '../../utils/getRuntime';
+import { getSingleMovie } from '../../api/movies';
 import { useParams } from 'react-router-dom';
 
 const SingleMovie = () => {
