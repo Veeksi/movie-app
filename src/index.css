@@ -11,6 +11,8 @@
   --color-text-primary: #000000;
   --color-text-hover: #ffffff;
   --color-text-italic: #000000a4;
+  --color-border-primary: #000000;
+  --color-border-hover: #000000;
 }
 
 .dark {
@@ -22,6 +24,8 @@
   --color-text-primary: #ffffff;
   --color-text-hover: #fbbf24;
   --color-text-italic: #ffffffa4;
+  --color-border-primary: #ffffff;
+  --color-border-hover: #fbbf24;
 }
 
 @tailwind base;

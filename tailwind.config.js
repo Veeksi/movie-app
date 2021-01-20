@@ -21,6 +21,10 @@ module.exports = {
         hover: 'var(--color-text-hover)',
         italic: 'var(--color-text-italic)',
       },
+      borderColor: {
+        primary: 'var(--color-border-primary)',
+        hover: 'var(--color-border-hover)',
+      },
     },
   },
   plugins: [],
