@@ -18,6 +18,7 @@ export const NavbarDropdown = ({ title }) => {
       >
         {title}
       </button>
+
       <div
         onClick={() => setIsActive(!isActive)}
         className={

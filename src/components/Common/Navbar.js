@@ -48,6 +48,7 @@ const Navbar = (props) => {
           </span>
         </p>
       </Link>
+
       <button
         className=" inline-flex p-3 hover:bg-hover rounded lg:hidden text-primary ml-auto hover:text-hover focus:outline-none"
         onClick={handleClick}
@@ -67,6 +68,7 @@ const Navbar = (props) => {
           />
         </svg>
       </button>
+
       <div
         className={`${
           active ? '' : 'hidden'
@@ -93,6 +95,7 @@ const Navbar = (props) => {
               <option value="movie">Movies</option>
               <option value="tv">Series</option>
             </select>
+
             <div className="flex flex-row px-3 py-2 pl-5 items-center rounded-r placeholder-gray-400 text-primary relative bg-card shadow outline-none focus:outline-none focus:shadow-outline">
               <input
                 className="focus:outline-none pr-2 bg-card"
