@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import Credits from './Credits';
-import SimilarMovies from './SimilarMovies';
+import Credits from '../Common/Credits';
+import SimilarMoviesOrSeries from '../Common/SimilarMovies';
 import { convertMinsToTime } from '../../utils/getRuntime';
 import { getSingleMovie } from '../../api/movies';
 import { useParams } from 'react-router-dom';
@@ -120,7 +120,7 @@ const SingleMovie = () => {
               <div className="border-t-2 border-primary mx-2 mt-5 pt-2 w-full">
                 <h1 className="text-3xl font-bold mb-2">Similar movies</h1>
               </div>
-              <SimilarMovies data={similarMovies} />
+              <SimilarMoviesOrSeries data={similarMovies} />
             </>
           )}
         </div>

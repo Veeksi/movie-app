@@ -9,7 +9,7 @@ const Credits = ({ data }) => {
             <div className="flex-none mb-5" key={idx}>
               <img
                 alt="Placeholder"
-                className="block rounded hover:border-hover border-4 w-48"
+                className="block rounded hover:border-hover border-4 w-48 h-72"
                 src={`${process.env.REACT_APP_IMAGE_URI}${result.profile_path}`}
               />
               <div className="flex flex-col justify-center items-center">

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-const SimilarMovies = ({ data }) => {
+const SimilarMoviesOrSeries = ({ data }) => {
   return (
     <div className="flex flex-nowrap overflow-x-auto mx-2 scrollbar scrollbar-thumb-gray-500 dark:scrollbar-thumb-gray-900 scrollbar-track-white dark:scrollbar-track-white">
       {data.results.map((result, idx) => (
@@ -9,14 +9,15 @@ const SimilarMovies = ({ data }) => {
           <Link to={`/movie/${result.id}`}>
             <img
               alt="Placeholder"
-              className="block rounded hover:border-hover border-4 w-48"
+              className="block rounded hover:border-hover border-4 w-48 h-72"
               src={`${process.env.REACT_APP_IMAGE_URI}${result.poster_path}`}
             />
           </Link>
+          <p>{result.name}</p>
         </div>
       ))}
     </div>
   );
 };
 
-export default SimilarMovies;
+export default SimilarMoviesOrSeries;
