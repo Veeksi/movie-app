@@ -41,10 +41,9 @@ const SingleMovie = () => {
     <div className="flex flex-col flex-grow bg-secondary text-primary">
       <div className="flex container mx-auto px-2 lg:px-0">
         <div className="flex flex-row flex-wrap container mx-auto my-2 p-0 bg-primary pb-1">
-          <div className="flex flex-col m-2">
+          <div className="flex flex-col w-52 m-2">
             <img
               alt="Placeholder"
-              className="block"
               src={`${process.env.REACT_APP_IMAGE_URI}${data.poster_path}`}
             />
             <p className="italic text-italic">{data.tagline}</p>

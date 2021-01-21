@@ -9,7 +9,7 @@ const SimilarMovies = ({ data }) => {
           <Link to={`/movie/${result.id}`}>
             <img
               alt="Placeholder"
-              className="block rounded hover:border-hover border-4"
+              className="block rounded hover:border-hover border-4 w-48"
               src={`${process.env.REACT_APP_IMAGE_URI}${result.poster_path}`}
             />
           </Link>
