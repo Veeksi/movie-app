@@ -58,7 +58,3 @@ export const basicQuery = async (props) => {
     console.error(e);
   }
 };
-
-export const searchQuery = async (props) => {
-  console.log(props);
-};

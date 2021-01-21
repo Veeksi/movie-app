@@ -9,7 +9,6 @@ const ListContainer = ({ data, type }) => {
         {data.results.map(
           (item, idx) =>
             item.poster_path && (
-              // Card starts here
               <Link
                 className="flex flex-col w-1/2 sm:w-1/4 md:w-1/5 lg:w-1/6 text-primary bg-card hover:bg-hover hover:text-hover"
                 key={idx}

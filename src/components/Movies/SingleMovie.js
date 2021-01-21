@@ -37,8 +37,6 @@ const SingleMovie = () => {
     );
   }
 
-  console.log(credits);
-
   return (
     <div className="flex flex-col flex-grow bg-secondary text-primary">
       <div className="flex container mx-auto px-2 lg:px-0">
