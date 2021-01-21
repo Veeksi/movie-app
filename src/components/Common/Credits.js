@@ -21,8 +21,8 @@ const Credits = ({ data }) => {
                 />
               )}
               <div className="flex flex-col justify-center items-center">
-                <p>{result.original_name}</p>
-                <p className="text-italic italic">{result.character}</p>
+                <p className="w-48 text-center">{result.original_name}</p>
+                <p className="text-italic italic w-48 text-center">{result.character}</p>
               </div>
             </div>
           )

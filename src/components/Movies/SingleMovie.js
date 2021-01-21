@@ -133,7 +133,7 @@ const SingleMovie = () => {
               <div className="border-t-2 border-primary mx-2 mt-5 pt-2 w-full">
                 <h1 className="text-3xl font-bold mb-2">Similar movies</h1>
               </div>
-              <SimilarMoviesOrSeries data={similarMovies} />
+              <SimilarMoviesOrSeries data={similarMovies} type="movie" />
             </>
           )}
         </div>

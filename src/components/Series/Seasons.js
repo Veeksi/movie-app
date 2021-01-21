@@ -2,7 +2,6 @@ import Placeholder from '../../assets/placeholder.svg';
 import React from 'react';
 
 const Seasons = ({ data }) => {
-  console.log(data);
   return (
     <div className="flex flex-nowrap overflow-x-auto mx-2 scrollbar scrollbar-thumb-gray-500 dark:scrollbar-thumb-gray-900 scrollbar-track-white dark:scrollbar-track-white">
       {data.map((season, idx) => (
@@ -22,8 +21,8 @@ const Seasons = ({ data }) => {
           )}
 
           <div className="flex flex-col justify-center items-center">
-            <p>Season: {season.season_number}</p>
-            <p>{season.air_date}</p>
+            <p className="w-48 text-center">Season: {season.season_number}</p>
+            <p className="w-48 text-center">{season.air_date}</p>
           </div>
         </div>
       ))}

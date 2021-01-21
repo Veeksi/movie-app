@@ -37,8 +37,6 @@ const SingleSerie = () => {
     );
   }
 
-  console.log(data);
-
   return (
     <div className="flex flex-col flex-grow bg-secondary text-primary">
       <div className="flex container mx-auto px-2 lg:px-0">
@@ -74,7 +72,7 @@ const SingleSerie = () => {
               {data.production_companies.map(
                 (company, idx) =>
                   company.logo_path && (
-                    <p key={idx} className="font-bold">
+                    <p key={idx} className="font-bold mr-2">
                       {company.name}
                     </p>
                   )
@@ -125,7 +123,7 @@ const SingleSerie = () => {
               <div className="border-t-2 border-primary mx-2 mt-5 pt-2 w-full">
                 <h1 className="text-3xl font-bold mb-2">Similar series</h1>
               </div>
-              <SimilarMoviesOrSeries data={similarSeries} />
+              <SimilarMoviesOrSeries data={similarSeries} type="tv" />
             </>
           )}
         </div>
