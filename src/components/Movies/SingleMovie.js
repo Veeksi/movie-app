@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Credits from '../Common/Credits';
 import SimilarMoviesOrSeries from '../Common/SimilarMovies';
 import { convertMinsToTime } from '../../utils/getRuntime';
+import { getBudget } from '../../utils/getBudget';
 import { getSingleMovie } from '../../api/movies';
 import { useParams } from 'react-router-dom';
 
@@ -37,6 +38,8 @@ const SingleMovie = () => {
     );
   }
 
+  console.log(data);
+
   return (
     <div className="flex flex-col flex-grow bg-secondary text-primary">
       <div className="flex container mx-auto px-2 lg:px-0">
@@ -68,6 +71,7 @@ const SingleMovie = () => {
 
             <p className="text-base">{convertMinsToTime(data.runtime)}</p>
             <p className="text-base">Status: {data.status}</p>
+            <p className="text-base">{`Budget: ${getBudget(data.budget)}`}</p>
 
             <div className="flex flex-row flex-wrap">
               <a
