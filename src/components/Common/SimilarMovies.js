@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Placeholder from '../../assets/placeholder.svg';
 import React from 'react';
 
 const SimilarMoviesOrSeries = ({ data }) => {
@@ -7,11 +8,19 @@ const SimilarMoviesOrSeries = ({ data }) => {
       {data.results.map((result, idx) => (
         <div className="flex-none mb-5" key={idx}>
           <Link to={`/movie/${result.id}`}>
-            <img
-              alt="Placeholder"
-              className="block rounded hover:border-hover border-4 w-48 h-72"
-              src={`${process.env.REACT_APP_IMAGE_URI}${result.poster_path}`}
-            />
+            {result.poster_path ? (
+              <img
+                alt={Placeholder}
+                className="block rounded hover:border-hover border-4 w-48 h-72"
+                src={`${process.env.REACT_APP_IMAGE_URI}${result.poster_path}`}
+              />
+            ) : (
+              <img
+                alt={Placeholder}
+                className="block rounded hover:border-hover border-4 w-48 h-72"
+                src={Placeholder}
+              />
+            )}
           </Link>
           <p>{result.name}</p>
         </div>
