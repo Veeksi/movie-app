@@ -37,7 +37,7 @@ const SingleMovie = () => {
     );
   }
 
-  console.log(similarMovies);
+  console.log(credits);
 
   return (
     <div className="flex flex-col flex-grow bg-secondary text-primary">

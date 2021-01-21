@@ -76,8 +76,8 @@ const Navbar = (props) => {
               Home
             </p>
           </Link>
-          <NavbarDropdown title="Movies" />
-          <NavbarDropdown title="Series" />
+          <NavbarDropdown title="movies" />
+          <NavbarDropdown title="series" />
 
           <form
             onSubmit={handleSearch}

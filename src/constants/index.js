@@ -17,7 +17,7 @@ export const searchParameters = {
       type: 'upcoming',
     },
   },
-  tv: {
+  series: {
     popular: {
       label: 'Popular',
       type: 'popular',
