@@ -25,22 +25,28 @@ The application needs a private API key (v3). You can get your own API key by re
 
 Here will be listed some pictures of this site.
 
-##### Main page (DARK)
+#### Main page (DARK)
 
-<img align="left" src="D:\Git-Veikko\movie-app\docs\images\main_page_dark.jpg">
+<img align="left" src="https://github.com/Veeksi/movie-app/blob/master/docs/images/main_page_dark.jpg">
 
-##### Main page (LIGHT)
+<p>&nbsp;</p>
 
-<img align="left" src="D:\Git-Veikko\movie-app\docs\images\main_page_light.jpeg">
+#### Main page (LIGHT)
 
-##### Specific movie & serie page
+<img align="left" src="https://github.com/Veeksi/movie-app/blob/master/docs/images/main_page_light.jpeg">
 
-<img align="left" src="D:\Git-Veikko\movie-app\docs\images\specific_movie_serie_page.png">
+<p>&nbsp;</p>
 
-##### Tablet view
+#### Specific movie & serie page
 
-<img align="left" src="D:\Git-Veikko\movie-app\docs\images\tablet_view.png">
+<img align="left" src="https://github.com/Veeksi/movie-app/blob/master/docs/images/specific_movie_serie_page.png">
 
-##### Mobile view
+<p>&nbsp;</p>
 
-<img align="left" src="D:\Git-Veikko\movie-app\docs\images\mobile_view.png">
+#### Tablet view
+
+<img align="center" src="https://github.com/Veeksi/movie-app/blob/master/docs/images/tablet_view.png">
+
+#### Mobile view
+
+<img align="center" src="https://github.com/Veeksi/movie-app/blob/master/docs/images/mobile_view.png">
